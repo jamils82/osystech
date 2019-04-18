@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     // generate random values for mainChart
-    this.http.get('http://localhost:3000/api/get'   ).subscribe(data => {
+    this.http.get('https://osystech.herokuapp.com/api/get'   ).subscribe(data => {
       console.log(data);
       this.users = data;
     });

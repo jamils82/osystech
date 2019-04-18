@@ -18,7 +18,7 @@ export class ColorsComponent implements OnInit {
       return;
     } else {
       // tslint:disable-next-line:max-line-length
-      this.http.post('http://localhost:3000/api/submit/' , { title: title  , description: discription , option : this.option , url : this.localUrl }  ).subscribe(data => {
+      this.http.post('https://osystech.herokuapp.com/api/submit/' , { title: title  , description: discription , option : this.option , url : this.localUrl }  ).subscribe(data => {
         console.log(data);
        });
     }
