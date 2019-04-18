@@ -37,7 +37,7 @@ export const navItems: NavData[] = [
   },
   {
     name: 'Upload',
-    url: 'upload',
+    url: '/upload',
     icon: 'icon-layers',
     // variant: 'primary',
     // attributes: { target: '_blank', rel: 'noopener' }
