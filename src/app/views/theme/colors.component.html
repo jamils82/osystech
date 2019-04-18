@@ -1,0 +1,36 @@
+<div class="animated fadeIn">
+  <br>
+  <div class="card">
+    <div class="card-header">
+      <i class="icon-drop"></i> Upload Form
+    </div>
+    <div class="card-body">
+      <br>
+      <div  class="row">
+        <div class="col-lg-3 col-md-3 col-sm-0 col-xs-0"></div>
+        <div class="text-center col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <h4>Upload Data:</h4>
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" placeholder="File Title" autocomplete="username" required>
+           </div>
+           <div class="input-group mb-3">
+              <textarea type="text" class="form-control" rows="6" [(ngModel)]="discription" [ngModelOptions]="{standalone: true}" placeholder="Discription" autocomplete="username" required> </textarea>
+           </div>
+           <div class="form-group input-group mb-3">
+           <select #option class="form-control" >
+             <option value="" selected disabled>Please select</option>
+             <option *ngFor="let o of options" value={{o}} >{{o}} </option>
+           </select> 
+           </div>
+           <div class="input-default-wrapper">
+          <input type="file" id="file-with-current" style="float:left"  accept="application/pdf" (change)="docupload($event)" class="input-default-js">
+        </div>
+             <div class="input-group">
+              <button style="margin: 0 auto; margin-right: 2px" type="button" (click)="submit( title , discription , option.value  )"  class="btn btn-primary px-4">Submit</button>
+             </div>      
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-0 col-xs-0"></div>
+      </div>
+    </div>
+  </div>
+</div>
