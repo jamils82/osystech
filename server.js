@@ -4,6 +4,8 @@ let bodyparser = require('body-parser');
 const path = require('path');
 let app = express();
 let mongoose = require('mongoose');
+
+app.use(express.static(__dirname + '/dist'));
 const port = process.env.PORT || 3000;
 let {Schema} = mongoose;
 let db = mongoose.connect('mongodb://saad:saad123@ds161335.mlab.com:61335/books');
@@ -122,7 +124,8 @@ app.route('/api/deleteuser/:username').delete((req, res) => {
   app.listen(port, () => {
   	console.log(`Running on Port ${port}`);
   });
-  app.all('*', function (req, res) { res.status(200).sendFile(path.join(__dirname, '/dist/index.html')); });
+  app.all('*', function (req, res) {
+     res.sendFile(path.join(__dirname, '/dist/')); });
   
   
   
