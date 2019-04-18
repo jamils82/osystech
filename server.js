@@ -105,7 +105,23 @@ app.route('/api/getdata/:username').get((req, res) => {
       }
   } )
 });
-  
+
+app.route('/api/getprogs').get( (req, res) => {
+   Programs.find( {} , (err, data) => {
+    if( err) {
+      res.send('err');
+    }
+    else {
+        if(!data){
+          res.send('No Record Found')
+        }
+        else {
+          //  console.log(data);
+          res.send(data);
+        }  
+    }
+  } )
+});  
 app.route('/api/deleteuser/:username').delete((req, res) => {
   console.log(req.params);
   const name = req.params.username;
