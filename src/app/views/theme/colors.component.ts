@@ -33,4 +33,7 @@ export class ColorsComponent implements OnInit {
             reader.readAsDataURL(event.target.files[0]);
         }
   }
+  takecare() {
+    console.log('takecare');
+  }
 }
